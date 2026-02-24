@@ -4,56 +4,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/png">
+    <meta name="theme-color" content="#00C853">
 
-    <!-- SEO Otimizado -->
+    <!-- Performance -->
+    <!-- <link rel="preconnect" href="https://logospng.org"> -->
+
+    <!-- SEO -->
     <title>Ton T3 Smart Black - Taxas Baixas e 12x Sem Juros | Oferta Oficial</title>
     <meta name="description"
         content="Adquira a Maquininha Ton T3 Smart Black com 73% de Desconto. Taxas a partir de 0,79%, Recebimento em 1 dia útil e Garantia Vitalícia. Oferta Oficial de Parceiro.">
     <meta name="keywords" content="Ton T3 Smart, Maquininha Ton, Taxa Ton, Ton Black, Renda Ton, Maquininha Barata">
     <meta name="robots" content="index, follow">
-    
-        <!-- Otimização para Redes Sociais (WhatsApp, Facebook, Instagram) -->
+
+    <!-- Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ofertaton.github.io/ton/">
     <meta property="og:title" content="Ton T3 Smart Black - 73% OFF e Taxa 0,79%">
-    <meta property="og:description" content="Peça sua maquininha com desconto máximo. Frete Grátis, Sem Aluguel e Garantia Vitalícia. Clique aqui!">
-    <!-- IMPORTANTE: Use o link completo da imagem abaixo -->
-    <meta property="og:image" content="https://ofertaton.github.io/ton/img/t3-smart.png">
+    <meta property="og:description"
+        content="Peça sua maquininha com desconto máximo. Frete Grátis, Sem Aluguel e Garantia Vitalícia. Clique aqui!">
+    <meta property="og:image" content="https://ofertaton.github.io/ton/img/t3-smart.avif">
 
-    <!-- Otimização para Twitter/X -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ton T3 Smart Black - Oferta Oficial">
     <meta name="twitter:description" content="Garanta a menor taxa do mercado com a T3 Smart.">
-    <meta name="twitter:image" content="https://ofertaton.github.io/ton/img/t3-smart.png">
-
-    <!-- Tailwind CSS (Estilização Rápida) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Configuração de Cores da Ton -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ton: {
-                            green: '#00C853',
-                            dark: '#1A1A1A',
-                            light: '#F5F7FA'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- ÁREA DE RASTREAMENTO (Cole seus pixels aqui depois) -->
-    <!-- Google Analytics, Meta Pixel, Google Ads Tag -->
+    <meta name="twitter:image" content="https://ofertaton.github.io/ton/img/t3-smart.avif">
 
     <style>
-        /* Efeito de pulso no botão para chamar atenção */
-        .btn-pulse {
+        /* --- RESET E VARIÁVEIS --- */
+        :root {
+            --ton-green: #00C853;
+            --ton-green-hover: #009624;
+            --ton-dark: #1A1A1A;
+            --ton-light: #F5F7FA;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            color: var(--text-main);
+            background-color: var(--ton-light);
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- UTILITÁRIOS --- */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-ton-green {
+            color: var(--ton-green);
+        }
+
+        .font-bold {
+            font-weight: 700;
+        }
+
+        .hidden-mobile {
+            display: none;
+        }
+
+        /* --- COMPONENTES --- */
+
+        /* Barra de Aviso */
+        .top-bar {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: bold;
+        }
+
+        /* Header */
+        header {
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--ton-dark);
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.05em;
+        }
+
+        .logo img {
+            height: 3rem;
+            width: auto;
+            margin-left: 0.5rem;
+        }
+
+        .btn-header {
+            background-color: var(--ton-green);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-header:hover {
+            background-color: var(--ton-green-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: white;
+            padding: 3rem 0;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column-reverse;
+            /* Mobile: texto embaixo da imagem */
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #dcfce7;
+            /* green-100 */
+            color: #166534;
+            /* green-800 */
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: bold;
+            width: fit-content;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            line-height: 1.1;
+            font-weight: 800;
+            color: #111827;
+        }
+
+        .hero-text p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .benefits-list svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: var(--ton-green);
+            margin-right: 0.5rem;
+        }
+
+        .price-container {
+            padding-top: 1rem;
+        }
+
+        .price-old {
+            font-size: 0.875rem;
+            color: #6b7280;
+            text-decoration: line-through;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: flex-end;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .price-main {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .price-sub {
+            font-size: 1.125rem;
+            color: var(--ton-green);
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Botão Principal com Pulso */
+        .btn-cta {
+            display: block;
+            width: 100%;
+            background-color: var(--ton-green);
+            color: white;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            margin-top: 1.5rem;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.2s, background-color 0.3s;
             animation: pulse-green 2s infinite;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--ton-green-hover);
+            transform: translateY(-4px);
         }
 
         @keyframes pulse-green {
@@ -69,159 +270,442 @@
                 box-shadow: 0 0 0 0 rgba(0, 200, 83, 0);
             }
         }
+
+        .secure-text {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        /* Imagem Hero */
+        .hero-image-container {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .bg-circle {
+            position: absolute;
+            background-color: #dcfce7;
+            border-radius: 50%;
+            width: 20rem;
+            height: 20rem;
+            z-index: 0;
+            filter: blur(40px);
+            opacity: 0.5;
+        }
+
+        .hero-img {
+            width: 75%;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 20px 13px rgba(0, 0, 0, 0.1));
+            transition: transform 0.5s;
+        }
+
+        .hero-img:hover {
+            transform: scale(1.05);
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            background-color: #dc2626;
+            color: white;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            box-shadow: var(--shadow);
+            transform: rotate(12deg);
+            z-index: 2;
+        }
+
+        /* Seção Benefícios */
+        .section-benefits {
+            padding: 4rem 0;
+            background-color: var(--ton-light);
+        }
+
+        .section-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1f2937;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow);
+            border-bottom: 4px solid var(--ton-green);
+            transition: box-shadow 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+        }
+
+        /* Seção Bandeiras */
+        .section-flags {
+            padding: 3rem 0;
+            background-color: white;
+            text-align: center;
+        }
+
+        .flags-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .flag-img {
+            height: 2.5rem;
+            object-fit: contain;
+        }
+
+        .link-pdf {
+            display: inline-flex;
+            align-items: center;
+            color: var(--ton-green);
+            font-weight: bold;
+            font-size: 1.125rem;
+            text-decoration: underline;
+        }
+
+        .link-pdf:hover {
+            color: var(--ton-green-hover);
+        }
+
+        /* Prova Social */
+        .section-proof {
+            padding: 3rem 0;
+            background-color: var(--ton-light);
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+        }
+
+        .proof-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0.7;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+        }
+
+        .proof-icons:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .proof-item {
+            font-weight: bold;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* CTA Final */
+        .section-final {
+            padding: 5rem 0;
+            background-color: var(--ton-dark);
+            color: white;
+            text-align: center;
+        }
+
+        .final-content {
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+
+        .section-final h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-final p {
+            font-size: 1.25rem;
+            color: #d1d5db;
+            margin-bottom: 2rem;
+        }
+
+        .btn-final {
+            display: inline-block;
+            background-color: var(--ton-green);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 1.25rem 2.5rem;
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .btn-final:hover {
+            background-color: var(--ton-green-hover);
+            transform: scale(1.05);
+        }
+
+        .link-catalog {
+            display: block;
+            margin-top: 2rem;
+            color: #9ca3af;
+            text-decoration: underline;
+            font-size: 0.875rem;
+        }
+
+        .link-catalog:hover {
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: black;
+            color: #6b7280;
+            padding: 2.5rem 0;
+            font-size: 0.875rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1f2937;
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        /* --- RESPONSIVIDADE (Desktop) --- */
+        @media (min-width: 768px) {
+            .hidden-mobile {
+                display: inline-block;
+            }
+
+            .hero-content {
+                flex-direction: row;
+                /* Lado a lado no Desktop */
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            .btn-cta {
+                width: auto;
+                display: inline-block;
+            }
+
+            .secure-text {
+                text-align: left;
+            }
+
+            .bg-circle {
+                width: 32rem;
+                height: 32rem;
+            }
+
+            .hero-img {
+                width: 66%;
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .flags-container {
+                gap: 4rem;
+            }
+
+            .flag-img {
+                height: 3rem;
+            }
+
+            /* Bandeiras maiores no desktop */
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-links {
+                text-align: right;
+            }
+        }
     </style>
 </head>
 
-<body class="font-sans text-gray-800 bg-gray-50">
+<body>
 
-    <!-- 1. BARRA DE AVISO (URGÊNCIA) -->
-    <div class="bg-black text-white text-center py-2 text-sm font-bold">
+    <!-- 1. BARRA DE AVISO -->
+    <div class="top-bar">
         ⚡ OFERTA RELÂMPAGO: 73% DE DESCONTO + FRETE GRÁTIS HOJE
     </div>
 
-    <!-- 2. CABEÇALHO (SIMPLES E DIRETO) -->
-    <header class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div class="text-2xl font-bold tracking-tighter text-ton-dark">
-            <span class="text-ton-green">Oferta</span>Tech <img src="img/Ton_Parceiro_Logo.png" alt="Parceiro Ton"
-                class="inline h-12 ml-2">
+    <!-- 2. CABEÇALHO -->
+    <header class="container">
+        <div class="logo">
+            <span class="text-ton-green">Oferta</span>Tech
+            <img src="img/Ton_Parceiro_Logo.avif" alt="Logo Parceiro Ton Autorizado" width="150" height="48">
         </div>
         <a href="https://ton.com.br/checkout/cart/?productId=TONBLACK_TIER_SMART_POS&referrer=D1B7AB60-6D0E-42A8-B876-7FA87148F094&userAnticipation=0&userTag=tonblack_tier&utm_medium=invite_share&utm_source=revendedor"
-            class="hidden md:block bg-ton-green text-white px-6 py-2 rounded-full font-bold hover:bg-green-600 transition">
+            class="btn-header hidden-mobile">
             Pedir com Desconto
         </a>
     </header>
 
-    <!-- 3. HERO SECTION (A VENDA ACONTECE AQUI) -->
-    <section class="bg-white py-12 md:py-20">
-        <div class="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center">
+    <!-- 3. HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-content">
 
             <!-- Texto de Venda -->
-            <div class="md:w-1/2 mt-8 md:mt-0 space-y-6">
-                <div class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold mb-2">
+            <div class="hero-text">
+                <div class="badge">
                     🏆 Campeã de Vendas
                 </div>
-                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">
+                <h1>
                     A Maquininha Inteligente com a <span class="text-ton-green">Menor Taxa do Brasil.</span>
                 </h1>
-                <p class="text-lg text-gray-600">
+                <p>
                     Pare de perder dinheiro com taxas altas. Com a <strong>Ton T3 Smart Black</strong>, você vende mais,
                     recebe em 1 dia útil e não paga aluguel.
                 </p>
 
-                <!-- Lista Rápida de Benefícios -->
-                <ul class="space-y-2 text-gray-700">
-                    <li class="flex items-center"><svg class="w-5 h-5 text-ton-green mr-2" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
+                <ul class="benefits-list">
+                    <li>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
-                        </svg> Taxas a partir de 0,79% (Black)</li>
-                    <li class="flex items-center"><svg class="w-5 h-5 text-ton-green mr-2" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
+                        </svg> Taxas a partir de 0,79% (Black)
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
-                        </svg> Chip 4G e Wi-Fi Grátis</li>
-                    <li class="flex items-center"><svg class="w-5 h-5 text-ton-green mr-2" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
+                        </svg> Chip 4G e Wi-Fi Grátis
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
-                        </svg> Imprime Comprovante na Hora</li>
+                        </svg> Imprime Comprovante na Hora
+                    </li>
                 </ul>
 
-                <!-- Preço e CTA -->
-                <div class="pt-4">
-                    <p class="text-sm text-gray-500 line-through">De R$ 418,80</p>
-                    <div class="flex items-end gap-2">
-                        <p class="text-4xl font-bold text-gray-900">12x R$ 14,17</p>
-                        <p class="text-lg text-ton-green font-bold mb-1">ou R$ 170,10 à vista</p>
+                <div class="price-container">
+                    <p class="price-old">De R$ 418,80</p>
+                    <div class="price-row">
+                        <p class="price-main">12x R$ 14,17</p>
+                        <p class="price-sub">ou R$ 170,10 à vista</p>
                     </div>
 
                     <a href="https://ton.com.br/checkout/cart/?productId=TONBLACK_TIER_SMART_POS&referrer=D1B7AB60-6D0E-42A8-B876-7FA87148F094&userAnticipation=0&userTag=tonblack_tier&utm_medium=invite_share&utm_source=revendedor"
-                        class="btn-pulse mt-6 block w-full md:w-auto text-center bg-ton-green text-white text-xl font-bold py-4 px-8 rounded-lg hover:bg-green-600 transition transform hover:-translate-y-1 shadow-lg">
+                        class="btn-cta">
                         QUERO MINHA T3 SMART AGORA ➔
                     </a>
-                    <p class="text-xs text-gray-500 mt-2 text-center md:text-left">🔒 Compra Segura no Site Oficial Ton
-                    </p>
+                    <p class="secure-text">🔒 Compra Segura no Site Oficial Ton</p>
                 </div>
             </div>
 
             <!-- Imagem do Produto -->
-            <div class="md:w-1/2 flex justify-center relative">
-                <!-- Círculo de fundo para destaque -->
-                <div
-                    class="absolute bg-green-100 rounded-full w-80 h-80 md:w-[500px] md:h-[500px] -z-10 blur-3xl opacity-50">
-                </div>
-
-                <!-- PLACEHOLDER DA IMAGEM - Substitua 't3-smart.png' pela imagem que você extraiu do zip -->
-                <img src="img/t3-smart.png" alt="Ton T3 Smart Maquininha"
-                    class="w-3/4 md:w-2/3 drop-shadow-2xl hover:scale-105 transition duration-500">
-
-                <!-- Selo Flutuante -->
-                <div
-                    class="absolute top-10 right-10 bg-red-600 text-white font-bold px-4 py-2 rounded-full shadow-lg transform rotate-12">
+            <div class="hero-image-container">
+                <div class="bg-circle"></div>
+                <img src="img/t3-smart.avif" alt="Ton T3 Smart Maquininha Black com Taxa Baixa" width="500" height="500"
+                    class="hero-img">
+                <div class="discount-badge">
                     -73% OFF
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. SEÇÃO DE BENEFÍCIOS (TÉCNICA) -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Por que a <span class="text-ton-green">T3
-                    Smart</span> é a melhor escolha?</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition border-b-4 border-ton-green">
-                    <div class="text-4xl mb-4">🚀</div>
-                    <h3 class="text-xl font-bold mb-2">Sistema Android Rápido</h3>
-                    <p class="text-gray-600">Tela touch screen de alta resolução. Venda com agilidade sem precisar do
-                        celular.</p>
+    <!-- 4. BENEFÍCIOS -->
+    <section class="section-benefits">
+        <div class="container">
+            <h2 class="section-title">Por que a <span class="text-ton-green">T3 Smart</span> é a melhor escolha?</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🚀</div>
+                    <h3>Sistema Android Rápido</h3>
+                    <p>Tela touch screen de alta resolução. Venda com agilidade sem precisar do celular.</p>
                 </div>
-                <!-- Card 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition border-b-4 border-ton-green">
-                    <div class="text-4xl mb-4">🔋</div>
-                    <h3 class="text-xl font-bold mb-2">Bateria de Longa Duração</h3>
-                    <p class="text-gray-600">Aguenta o dia todo de trabalho. Ideal para delivery e balcão.</p>
+                <div class="card">
+                    <div class="card-icon">🔋</div>
+                    <h3>Bateria de Longa Duração</h3>
+                    <p>Aguenta o dia todo de trabalho. Ideal para delivery e balcão.</p>
                 </div>
-                <!-- Card 3 -->
-                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition border-b-4 border-ton-green">
-                    <div class="text-4xl mb-4">🖨️</div>
-                    <h3 class="text-xl font-bold mb-2">Comprovante Impresso</h3>
-                    <p class="text-gray-600">Imprima o recibo na hora para seu cliente. Reposição de bobinas é grátis e
-                        vitalícia.</p>
+                <div class="card">
+                    <div class="card-icon">🖨️</div>
+                    <h3>Comprovante Impresso</h3>
+                    <p>Imprima o recibo na hora para seu cliente. Reposição de bobinas é grátis e vitalícia.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. BANDEIRAS ACEITAS -->
-    <section class="py-12 bg-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800">Bandeiras Aceitas</h2>
-
+    <!-- 5. BANDEIRAS -->
+    <section class="section-flags">
+        <div class="container">
+            <h2 class="section-title">Bandeiras Aceitas</h2>
             <div class="mb-8">
-                <h3 class="text-xl font-bold mb-6 text-gray-600">Habilitadas Automaticamente</h3>
-                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-                    <!-- Visa -->
-                    <img src="https://logospng.org/download/visa/logo-visa-2048.png" alt="Visa"
-                        class="h-10 md:h-12 object-contain">
-                    <!-- Mastercard -->
+                <h3 class="text-xl font-bold mb-6 text-gray-600" style="margin-bottom: 1.5rem;">Habilitadas
+                    Automaticamente</h3>
+                <div class="flags-container">
+                    <img src="https://logospng.org/download/visa/logo-visa-2048.png" alt="Visa" loading="lazy"
+                        class="flag-img">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard"
-                        class="h-12 md:h-16 object-contain">
-                    <!-- Elo -->
+                        loading="lazy" class="flag-img">
                     <img src="https://logospng.org/download/cartao-elo/logo-cartao-elo-2048.png" alt="Elo"
-                        class="h-12 md:h-16 object-contain">
-                    <!-- American Express -->
+                        loading="lazy" class="flag-img">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg"
-                        alt="American Express" class="h-12 md:h-16 object-contain">
+                        alt="American Express" loading="lazy" class="flag-img">
                 </div>
             </div>
-
-            <div class="mt-8">
-                <a href="img/Folheto%20bandeiras.pdf" target="_blank"
-                    class="inline-flex items-center text-ton-green font-bold text-lg hover:text-green-700 transition underline">
-                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div>
+                <a href="img/Folheto%20bandeiras.pdf" target="_blank" class="link-pdf">
+                    <svg class="w-6 h-6 mr-2" style="width: 1.5rem; margin-right: 0.5rem;" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
                         </path>
@@ -232,71 +716,62 @@
         </div>
     </section>
 
-    <!-- 6. PROVA SOCIAL / SEGURANÇA -->
-    <section class="py-12 bg-gray-50 border-t border-gray-200">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-2xl font-bold mb-8">Garantia de Qualidade Stone</h2>
-            <div
-                class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition">
-                <!-- Ícones de bandeiras e segurança -->
-                <div class="flex items-center gap-2 font-bold text-xl"><span class="text-green-600">✔</span> Garantia
-                    Vitalícia</div>
-                <div class="flex items-center gap-2 font-bold text-xl"><span class="text-green-600">✔</span> Suporte 24h
-                </div>
-                <div class="flex items-center gap-2 font-bold text-xl"><span class="text-green-600">✔</span> Sem
-                    Mensalidade</div>
+    <!-- 6. PROVA SOCIAL -->
+    <section class="section-proof">
+        <div class="container">
+            <h2 class="text-center font-bold mb-8" style="font-size: 1.5rem; margin-bottom: 2rem;">Garantia de Qualidade
+                Stone</h2>
+            <div class="proof-icons">
+                <div class="proof-item"><span class="text-ton-green">✔</span> Garantia Vitalícia</div>
+                <div class="proof-item"><span class="text-ton-green">✔</span> Suporte 24h</div>
+                <div class="proof-item"><span class="text-ton-green">✔</span> Sem Mensalidade</div>
             </div>
         </div>
     </section>
 
-    <!-- 7. CTA FINAL (Fundo de Funil) -->
-    <section id="oferta" class="py-20 bg-ton-dark text-white text-center">
-        <div class="container mx-auto px-4 max-w-3xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Comece a lucrar mais hoje mesmo</h2>
-            <p class="text-xl text-gray-300 mb-8">Aproveite o plano <strong>Ton Black</strong> com as menores taxas do
-                mercado. Oferta exclusiva por tempo limitado.</p>
-
+    <!-- 7. CTA FINAL -->
+    <section id="oferta" class="section-final">
+        <div class="container final-content">
+            <h2>Comece a lucrar mais hoje mesmo</h2>
+            <p>Aproveite o plano <strong>Ton Black</strong> com as menores taxas do mercado. Oferta exclusiva por tempo
+                limitado.</p>
             <a href="https://ton.com.br/checkout/cart/?productId=TONBLACK_TIER_SMART_POS&referrer=D1B7AB60-6D0E-42A8-B876-7FA87148F094&userAnticipation=0&userTag=tonblack_tier&utm_medium=invite_share&utm_source=revendedor"
-                class="inline-block bg-ton-green text-white text-2xl font-bold py-5 px-10 rounded-lg hover:bg-green-600 transition shadow-lg transform hover:scale-105">
+                class="btn-final">
                 GARANTIR MEU DESCONTO AGORA
             </a>
-
-            <div class="mt-8">
+            <div>
                 <a href="https://ton.com.br/catalogo/?referrer=D1B7AB60-6D0E-42A8-B876-7FA87148F094&userAnticipation=0&utm_medium=invite_share&utm_source=revendedor"
-                    class="text-gray-400 underline hover:text-white text-sm">
+                    class="link-catalog">
                     Ver outros modelos no catálogo
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 7. RODAPÉ (COMPLIANCE OBRIGATÓRIO) -->
-    <footer class="bg-black text-gray-500 py-10 text-sm">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+    <!-- 8. RODAPÉ -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
                 <div>
-                    <h4 class="text-white font-bold mb-4">Sobre</h4>
+                    <h4 class="text-white font-bold" style="margin-bottom: 1rem;">Sobre</h4>
                     <p>Somos parceiros autorizados do programa Renda Ton. Nosso objetivo é oferecer as melhores soluções
                         de pagamento para o seu negócio com total transparência.</p>
                 </div>
-                <div class="text-right md:text-right text-left">
-                    <h4 class="text-white font-bold mb-4">Links Úteis</h4>
-                    <ul class="space-y-2">
-                        <li><a href="https://documentos.ton.com.br/politica-de-privacidade.pdf"
-                                class="hover:text-white">Política de Privacidade</a></li>
-                        <li><a href="https://documentos.ton.com.br/termos-e-condicoes.pdf?_gl=1*13665c9*_gcl_aw_au*MzgwMzAzMjkwLjE3NjQyNjcwNzM.*_ga*MTg5MDgzOTQ1LjE3NjQyNjcwNzM.*_ga_B0KF4NWL9Z*czE3NjQyNzAyMjAkbzIkZzEkdDE3NjQyNzA1MzUkajQ1JGwwJGgw*_gcl_au*MTg3MjQ5OTI0OS4xNzY0MjY3MDc0*_ga_6E38STZDQX*czE3NjQyNzAzMTMkbzIkZzEkdDE3NjQyNzA1MzUkajU1JGwwJGgw"
-                                class="hover:text-white">Termos e Condições</a></li>
-                        <li><a href="https://documentos.ton.com.br/regulamento-tonblack-tier.pdf"
-                                class="hover:text-white">Regulamento Ton Black</a></li>
-                        <li><a href="https://ton.com.br" target="_blank" class="hover:text-white">Site Oficial Ton</a>
-                        </li>
+                <div class="footer-links">
+                    <h4 class="text-white font-bold" style="margin-bottom: 1rem;">Links Úteis</h4>
+                    <ul>
+                        <li><a href="https://documentos.ton.com.br/politica-de-privacidade.pdf">Política de
+                                Privacidade</a></li>
+                        <li><a href="https://documentos.ton.com.br/termos-e-condicoes.pdf">Termos e Condições</a></li>
+                        <li><a href="https://documentos.ton.com.br/regulamento-tonblack-tier.pdf">Regulamento Ton
+                                Black</a></li>
+                        <li><a href="https://ton.com.br" target="_blank">Site Oficial Ton</a></li>
                     </ul>
                 </div>
             </div>
-
-            <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="mb-2">⚠️ <strong>Aviso Importante:</strong> Este não é o site oficial da Ton/Stone. Somos um
-                    parceiro de vendas autorizado.</p>
+            <div class="footer-bottom">
+                <p style="margin-bottom: 0.5rem;">⚠️ <strong>Aviso Importante:</strong> Este não é o site oficial da
+                    Ton/Stone. Somos um parceiro de vendas autorizado.</p>
                 <p>&copy;
                     <script>document.write(new Date().getFullYear());</script> Oferta Tech Pagamentos. Todos os direitos
                     reservados.
