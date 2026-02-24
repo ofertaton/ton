@@ -7,99 +7,52 @@
     <link rel="icon" href="img/favicon.ico" type="image/png">
     <meta name="theme-color" content="#00C853">
 
-    <!-- Performance -->
-    <!-- <link rel="preconnect" href="https://logospng.org"> -->
+    <!-- Preload da imagem LCP para celular (Carregamento instantâneo) -->
+    <link rel="preload" as="image" href="img/t3-smart.avif" fetchpriority="high">
 
     <!-- SEO -->
     <title>Ton T3 Smart Black - Taxas Baixas e 12x Sem Juros | Oferta Oficial</title>
     <meta name="description"
         content="Adquira a Maquininha Ton T3 Smart Black com 73% de Desconto. Taxas a partir de 0,79%, Recebimento em 1 dia útil e Garantia Vitalícia. Oferta Oficial de Parceiro.">
-    <meta name="keywords" content="Ton T3 Smart, Maquininha Ton, Taxa Ton, Ton Black, Renda Ton, Maquininha Barata">
-    <meta name="robots" content="index, follow">
-
-    <!-- Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ofertaton.github.io/ton/">
-    <meta property="og:title" content="Ton T3 Smart Black - 73% OFF e Taxa 0,79%">
-    <meta property="og:description"
-        content="Peça sua maquininha com desconto máximo. Frete Grátis, Sem Aluguel e Garantia Vitalícia. Clique aqui!">
-    <meta property="og:image" content="https://ofertaton.github.io/ton/img/t3-smart.avif">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ton T3 Smart Black - Oferta Oficial">
-    <meta name="twitter:description" content="Garanta a menor taxa do mercado com a T3 Smart.">
-    <meta name="twitter:image" content="https://ofertaton.github.io/ton/img/t3-smart.avif">
-
+    
     <style>
-        /* --- RESET E VARIÁVEIS --- */
+        /* --- CSS CRÍTICO --- */
         :root {
-            --ton-green: #00C853;
+            --ton-green: #00C853; /* Fundo/Botões */
             --ton-green-hover: #009624;
+            --ton-green-text: #007a33; /* Texto (Mais escuro para Acessibilidade) */
             --ton-dark: #1A1A1A;
             --ton-light: #F5F7FA;
             --text-main: #1f2937;
             --text-muted: #4b5563;
             --white: #ffffff;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: system-ui, -apple-system, sans-serif;
             color: var(--text-main);
             background-color: var(--ton-light);
             line-height: 1.5;
+            text-rendering: optimizeLegibility;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
 
-        ul {
-            list-style: none;
-        }
+        /* Utilitários */
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .text-center { text-align: center; }
+        
+        /* Correção de Contraste: Usar verde mais escuro para texto */
+        .text-ton-green { color: var(--ton-green-text); font-weight: 700; }
+        .font-bold { font-weight: 700; }
+        .hidden-mobile { display: none; }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* --- UTILITÁRIOS --- */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .text-ton-green {
-            color: var(--ton-green);
-        }
-
-        .font-bold {
-            font-weight: 700;
-        }
-
-        .hidden-mobile {
-            display: none;
-        }
-
-        /* --- COMPONENTES --- */
-
-        /* Barra de Aviso */
+        /* Top Bar */
         .top-bar {
             background-color: black;
             color: white;
@@ -110,12 +63,7 @@
         }
 
         /* Header */
-        header {
-            padding: 1rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        header { padding: 1rem 0; display: flex; justify-content: space-between; align-items: center; }
 
         .logo {
             font-size: 1.5rem;
@@ -126,52 +74,22 @@
             letter-spacing: -0.05em;
         }
 
-        .logo img {
-            height: 3rem;
-            width: auto;
-            margin-left: 0.5rem;
-        }
-
-        .btn-header {
-            background-color: var(--ton-green);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 9999px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .btn-header:hover {
-            background-color: var(--ton-green-hover);
-        }
-
         /* Hero Section */
-        .hero {
-            background-color: white;
-            padding: 3rem 0;
-        }
-
+        .hero { background-color: white; padding: 2rem 0 3rem; overflow: hidden; }
+        
         .hero-content {
             display: flex;
             flex-direction: column-reverse;
-            /* Mobile: texto embaixo da imagem */
             align-items: center;
             gap: 2rem;
         }
 
-        .hero-text {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
+        .hero-text { flex: 1; display: flex; flex-direction: column; gap: 1rem; }
 
         .badge {
             display: inline-block;
             background-color: #dcfce7;
-            /* green-100 */
             color: #166534;
-            /* green-800 */
             padding: 0.25rem 0.75rem;
             border-radius: 9999px;
             font-size: 0.875rem;
@@ -180,62 +98,26 @@
         }
 
         h1 {
-            font-size: 2.25rem;
+            font-size: 2rem;
             line-height: 1.1;
             font-weight: 800;
             color: #111827;
         }
 
-        .hero-text p {
-            font-size: 1.125rem;
-            color: var(--text-muted);
-        }
+        .hero-text p { font-size: 1.125rem; color: var(--text-muted); }
 
-        .benefits-list li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.5rem;
-            color: #374151;
-        }
+        .benefits-list li { display: flex; align-items: center; margin-bottom: 0.5rem; color: #374151; font-weight: 500; }
+        .check-icon { color: var(--ton-green); margin-right: 0.5rem; font-weight: bold; }
 
-        .benefits-list svg {
-            width: 1.25rem;
-            height: 1.25rem;
-            color: var(--ton-green);
-            margin-right: 0.5rem;
-        }
+        /* Preço */
+        .price-container { margin-top: 0.5rem; }
+        .price-old { font-size: 0.875rem; color: #6b7280; text-decoration: line-through; }
+        
+        .price-row { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+        .price-main { font-size: 2rem; font-weight: 800; color: #111827; }
+        .price-sub { font-size: 1.125rem; color: var(--ton-green-text); font-weight: 700; }
 
-        .price-container {
-            padding-top: 1rem;
-        }
-
-        .price-old {
-            font-size: 0.875rem;
-            color: #6b7280;
-            text-decoration: line-through;
-        }
-
-        .price-row {
-            display: flex;
-            align-items: flex-end;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .price-main {
-            font-size: 2.25rem;
-            font-weight: 700;
-            color: #111827;
-        }
-
-        .price-sub {
-            font-size: 1.125rem;
-            color: var(--ton-green);
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-        }
-
-        /* Botão Principal com Pulso */
+        /* Botão CTA */
         .btn-cta {
             display: block;
             width: 100%;
@@ -244,542 +126,238 @@
             text-align: center;
             font-size: 1.25rem;
             font-weight: bold;
-            padding: 1rem 2rem;
+            padding: 1rem;
             border-radius: 0.5rem;
             margin-top: 1.5rem;
             box-shadow: var(--shadow-lg);
             transition: transform 0.2s, background-color 0.3s;
-            animation: pulse-green 2s infinite;
         }
-
-        .btn-cta:hover {
-            background-color: var(--ton-green-hover);
-            transform: translateY(-4px);
-        }
-
-        @keyframes pulse-green {
-            0% {
-                box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.7);
-            }
-
-            70% {
-                box-shadow: 0 0 0 10px rgba(0, 200, 83, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(0, 200, 83, 0);
-            }
-        }
+        .btn-cta:hover { background-color: var(--ton-green-hover); transform: translateY(-2px); }
 
         .secure-text {
             font-size: 0.75rem;
             color: #6b7280;
-            margin-top: 0.5rem;
+            margin-top: 0.8rem;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
         }
 
-        /* Imagem Hero */
+        /* Imagem Hero Otimizada para CLS */
         .hero-image-container {
-            flex: 1;
             position: relative;
+            width: 100%;
+            max-width: 320px; /* Limita largura no mobile */
             display: flex;
             justify-content: center;
-        }
-
-        .bg-circle {
-            position: absolute;
-            background-color: #dcfce7;
-            border-radius: 50%;
-            width: 20rem;
-            height: 20rem;
-            z-index: 0;
-            filter: blur(40px);
-            opacity: 0.5;
+            aspect-ratio: 467 / 700; /* Reserva espaço exato */
         }
 
         .hero-img {
-            width: 75%;
-            position: relative;
+            width: 100%;
+            height: auto;
             z-index: 1;
-            filter: drop-shadow(0 20px 13px rgba(0, 0, 0, 0.1));
-            transition: transform 0.5s;
-        }
-
-        .hero-img:hover {
-            transform: scale(1.05);
+            filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1));
         }
 
         .discount-badge {
             position: absolute;
-            top: 2.5rem;
-            right: 2.5rem;
+            top: 10px;
+            right: 10px;
             background-color: #dc2626;
             color: white;
             font-weight: bold;
             padding: 0.5rem 1rem;
             border-radius: 9999px;
-            box-shadow: var(--shadow);
             transform: rotate(12deg);
             z-index: 2;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
-        /* Seção Benefícios */
-        .section-benefits {
-            padding: 4rem 0;
-            background-color: var(--ton-light);
-        }
-
-        .section-title {
-            font-size: 1.875rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #1f2937;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
+        /* Cards Benefícios */
+        .section-benefits { padding: 3rem 0; background-color: var(--ton-light); }
+        .grid-cards { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; }
+        
         .card {
             background: white;
             padding: 2rem;
             border-radius: 0.75rem;
-            box-shadow: var(--shadow);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             border-bottom: 4px solid var(--ton-green);
-            transition: box-shadow 0.3s;
-        }
-
-        .card:hover {
-            box-shadow: var(--shadow-lg);
-        }
-
-        .card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .card h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .card p {
-            color: var(--text-muted);
-        }
-
-        /* Seção Bandeiras */
-        .section-flags {
-            padding: 3rem 0;
-            background-color: white;
             text-align: center;
         }
+        .card h3 { font-size: 1.25rem; margin: 1rem 0 0.5rem; color: #111827; }
 
-        .flags-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .flag-img {
-            height: 2.5rem;
-            object-fit: contain;
-        }
-
-        .link-pdf {
-            display: inline-flex;
-            align-items: center;
-            color: var(--ton-green);
-            font-weight: bold;
-            font-size: 1.125rem;
-            text-decoration: underline;
-        }
-
-        .link-pdf:hover {
-            color: var(--ton-green-hover);
-        }
-
-        /* Prova Social */
-        .section-proof {
-            padding: 3rem 0;
-            background-color: var(--ton-light);
-            border-top: 1px solid #e5e7eb;
-            text-align: center;
-        }
-
-        .proof-icons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            opacity: 0.7;
-            filter: grayscale(100%);
-            transition: filter 0.3s;
-        }
-
-        .proof-icons:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-
-        .proof-item {
-            font-weight: bold;
-            font-size: 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* CTA Final */
-        .section-final {
-            padding: 5rem 0;
-            background-color: var(--ton-dark);
-            color: white;
-            text-align: center;
-        }
-
-        .final-content {
-            max-width: 48rem;
-            margin: 0 auto;
-        }
-
-        .section-final h2 {
-            font-size: 2.25rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-final p {
-            font-size: 1.25rem;
-            color: #d1d5db;
-            margin-bottom: 2rem;
-        }
-
-        .btn-final {
-            display: inline-block;
-            background-color: var(--ton-green);
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            padding: 1.25rem 2.5rem;
-            border-radius: 0.5rem;
-            box-shadow: var(--shadow-lg);
-            transition: transform 0.2s, background-color 0.3s;
-        }
-
-        .btn-final:hover {
-            background-color: var(--ton-green-hover);
-            transform: scale(1.05);
-        }
-
-        .link-catalog {
-            display: block;
-            margin-top: 2rem;
-            color: #9ca3af;
-            text-decoration: underline;
-            font-size: 0.875rem;
-        }
-
-        .link-catalog:hover {
-            color: white;
-        }
-
+        /* Bandeiras */
+        .section-flags { background: white; padding: 3rem 0; text-align: center; }
+        .flags-wrapper { display: flex; justify-content: center; gap: 1.5rem; margin: 1.5rem 0; flex-wrap: wrap; }
+        
         /* Footer */
-        footer {
-            background-color: black;
-            color: #6b7280;
-            padding: 2.5rem 0;
-            font-size: 0.875rem;
-        }
+        footer { background-color: var(--ton-dark); color: #9ca3af; padding: 3rem 0 1.5rem; font-size: 0.875rem; }
+        .footer-grid { display: grid; gap: 2rem; }
+        .footer-title { color: white; font-weight: bold; margin-bottom: 1rem; font-size: 1rem; }
+        .footer-links a { display: block; margin-bottom: 0.5rem; transition: color 0.2s; }
+        .footer-links a:hover { color: white; }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #1f2937;
-            padding-top: 2rem;
-            text-align: center;
-        }
-
-        /* --- RESPONSIVIDADE (Desktop) --- */
+        /* Desktop */
         @media (min-width: 768px) {
-            .hidden-mobile {
-                display: inline-block;
-            }
-
-            .hero-content {
-                flex-direction: row;
-                /* Lado a lado no Desktop */
-            }
-
-            h1 {
-                font-size: 3rem;
-            }
-
-            .btn-cta {
-                width: auto;
-                display: inline-block;
-            }
-
-            .secure-text {
-                text-align: left;
-            }
-
-            .bg-circle {
-                width: 32rem;
-                height: 32rem;
-            }
-
-            .hero-img {
-                width: 66%;
-            }
-
-            .cards-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .flags-container {
-                gap: 4rem;
-            }
-
-            .flag-img {
-                height: 3rem;
-            }
-
-            /* Bandeiras maiores no desktop */
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .footer-links {
-                text-align: right;
-            }
+            .hidden-mobile { display: block; }
+            .btn-header { display: inline-block; }
+            .hero-content { flex-direction: row; text-align: left; align-items: center; }
+            .hero-text { padding-right: 2rem; align-items: flex-start; }
+            h1 { font-size: 3rem; }
+            .btn-cta { width: auto; padding: 1rem 3rem; display: inline-block; }
+            .secure-text { justify-content: flex-start; }
+            .hero-image-container { max-width: 400px; }
+            .grid-cards { grid-template-columns: repeat(3, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .footer-links { text-align: right; }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- 1. BARRA DE AVISO -->
-    <div class="top-bar">
-        ⚡ OFERTA RELÂMPAGO: 73% DE DESCONTO + FRETE GRÁTIS HOJE
-    </div>
+    <!-- Main Landmark para Acessibilidade -->
+    <div class="top-bar">⚡ OFERTA RELÂMPAGO: 73% OFF + FRETE GRÁTIS</div>
 
-    <!-- 2. CABEÇALHO -->
     <header class="container">
         <div class="logo">
             <span class="text-ton-green">Oferta</span>Tech
+            <!-- FIX CLS: Width e Height explícitos no logo -->
             <img src="img/Ton_Parceiro_Logo.avif" alt="Logo Parceiro Ton Autorizado" width="150" height="48">
         </div>
-        <a href="https://ton.com.br/checkout/cart/?productId=TONBLACK_TIER_SMART_POS&referrer=D1B7AB60-6D0E-42A8-B876-7FA87148F094&userAnticipation=0&userTag=tonblack_tier&utm_medium=invite_share&utm_source=revendedor"
-            class="btn-header hidden-mobile">
-            Pedir com Desconto
-        </a>
+        <a href="https://ton.com.br/checkout/cart/?productId=TONBLACK_TIER_SMART_POS&referrer=D1B7AB60-6D0E-42A8-B876-7FA87148F094&userAnticipation=0&userTag=tonblack_tier&utm_medium=invite_share&utm_source=revendedor" 
+           class="btn-header hidden-mobile">Pedir Agora</a>
     </header>
 
-    <!-- 3. HERO SECTION -->
-    <section class="hero">
-        <div class="container hero-content">
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                
+                <div class="hero-text">
+                    <div class="badge">🏆 Campeã de Vendas</div>
+                    <h1>A Maquininha Inteligente com a <span class="text-ton-green">Menor Taxa.</span></h1>
+                    <p>Pare de perder dinheiro. Com a <strong>Ton T3 Smart Black</strong>, você vende mais, recebe em 1 dia útil e não paga aluguel.</p>
 
-            <!-- Texto de Venda -->
-            <div class="hero-text">
-                <div class="badge">
-                    🏆 Campeã de Vendas
-                </div>
-                <h1>
-                    A Maquininha Inteligente com a <span class="text-ton-green">Menor Taxa do Brasil.</span>
-                </h1>
-                <p>
-                    Pare de perder dinheiro com taxas altas. Com a <strong>Ton T3 Smart Black</strong>, você vende mais,
-                    recebe em 1 dia útil e não paga aluguel.
-                </p>
+                    <ul class="benefits-list">
+                        <li><span class="check-icon">✔</span> Taxas a partir de 0,79% (Black)</li>
+                        <li><span class="check-icon">✔</span> Chip 4G e Wi-Fi Grátis</li>
+                        <li><span class="check-icon">✔</span> Imprime Comprovante na Hora</li>
+                    </ul>
 
-                <ul class="benefits-list">
-                    <li>
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                            </path>
-                        </svg> Taxas a partir de 0,79% (Black)
-                    </li>
-                    <li>
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                            </path>
-                        </svg> Chip 4G e Wi-Fi Grátis
-                    </li>
-                    <li>
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                            </path>
-                        </svg> Imprime Comprovante na Hora
-                    </li>
-                </ul>
+                    <div class="price-container">
+                        <p class="price-old">De R$ 418,80</p>
+                        <div class="price-row">
+                            <span class="price-main">12x R$ 14,17</span>
+                            <span class="price-sub">ou R$ 170,10 à vista</span>
+                        </div>
 
-                <div class="price-container">
-                    <p class="price-old">De R$ 418,80</p>
-                    <div class="price-row">
-                        <p class="price-main">12x R$ 14,17</p>
-                        <p class="price-sub">ou R$ 170,10 à vista</p>
+                        <a href="https://ton.com.br/checkout/cart/?productId=TONBLACK_TIER_SMART_POS&referrer=D1B7AB60-6D0E-42A8-B876-7FA87148F094&userAnticipation=0&userTag=tonblack_tier&utm_medium=invite_share&utm_source=revendedor" 
+                           class="btn-cta">QUERO MINHA T3 SMART ➔</a>
+                        
+                        <div class="secure-text">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3z"/></svg>
+                            Compra Segura no Site Oficial Ton
+                        </div>
                     </div>
+                </div>
 
-                    <a href="https://ton.com.br/checkout/cart/?productId=TONBLACK_TIER_SMART_POS&referrer=D1B7AB60-6D0E-42A8-B876-7FA87148F094&userAnticipation=0&userTag=tonblack_tier&utm_medium=invite_share&utm_source=revendedor"
-                        class="btn-cta">
-                        QUERO MINHA T3 SMART AGORA ➔
-                    </a>
-                    <p class="secure-text">🔒 Compra Segura no Site Oficial Ton</p>
+                <!-- FIX LCP & CLS: Dimensões explícitas e fetchpriority -->
+                <div class="hero-image-container">
+                    <div class="discount-badge">-73% OFF</div>
+                    <img src="img/t3-smart.avif" 
+                         alt="Maquininha Ton T3 Smart Black" 
+                         width="467" height="700" 
+                         class="hero-img" 
+                         fetchpriority="high">
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-benefits">
+            <div class="container">
+                <!-- FIX Hierarquia: H2 em vez de DIV ou H1 -->
+                <h2 class="text-center" style="font-size: 1.8rem; font-weight: 800; color:#1f2937">
+                    Por que a <span class="text-ton-green">T3 Smart</span> é a melhor escolha?
+                </h2>
+                
+                <div class="grid-cards">
+                    <div class="card">
+                        <div style="font-size:3rem">🚀</div>
+                        <h3>Sistema Android</h3>
+                        <p>Tela touch screen de alta resolução. Venda com agilidade sem precisar de celular.</p>
+                    </div>
+                    <div class="card">
+                        <div style="font-size:3rem">🔋</div>
+                        <h3>Bateria Longa</h3>
+                        <p>Aguenta o dia todo de trabalho. Ideal para delivery e balcão.</p>
+                    </div>
+                    <div class="card">
+                        <div style="font-size:3rem">🖨️</div>
+                        <h3>Comprovante</h3>
+                        <p>Imprima o recibo na hora. Reposição de bobinas é grátis e vitalícia.</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Imagem do Produto -->
-            <div class="hero-image-container">
-                <div class="bg-circle"></div>
-                <img src="img/t3-smart.avif" alt="Ton T3 Smart Maquininha Black com Taxa Baixa" width="500" height="500"
-                    class="hero-img">
-                <div class="discount-badge">
-                    -73% OFF
+        <section class="section-flags">
+            <div class="container">
+                <h2 style="font-size: 1.5rem; font-weight: 700; color:#1f2937">Aceite as Principais Bandeiras</h2>
+                
+                <div class="flags-wrapper">
+                    <!-- FIX CLS: Imagens externas com tamanho travado no HTML -->
+                    <img src="https://logospng.org/download/visa/logo-visa-2048.png" alt="Visa" loading="lazy" width="60" height="20" style="object-fit:contain">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" loading="lazy" width="60" height="36" style="object-fit:contain">
+                    <img src="https://logospng.org/download/cartao-elo/logo-cartao-elo-2048.png" alt="Elo" loading="lazy" width="60" height="20" style="object-fit:contain">
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. BENEFÍCIOS -->
-    <section class="section-benefits">
-        <div class="container">
-            <h2 class="section-title">Por que a <span class="text-ton-green">T3 Smart</span> é a melhor escolha?</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">🚀</div>
-                    <h3>Sistema Android Rápido</h3>
-                    <p>Tela touch screen de alta resolução. Venda com agilidade sem precisar do celular.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🔋</div>
-                    <h3>Bateria de Longa Duração</h3>
-                    <p>Aguenta o dia todo de trabalho. Ideal para delivery e balcão.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🖨️</div>
-                    <h3>Comprovante Impresso</h3>
-                    <p>Imprima o recibo na hora para seu cliente. Reposição de bobinas é grátis e vitalícia.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. BANDEIRAS -->
-    <section class="section-flags">
-        <div class="container">
-            <h2 class="section-title">Bandeiras Aceitas</h2>
-            <div class="mb-8">
-                <h3 class="text-xl font-bold mb-6 text-gray-600" style="margin-bottom: 1.5rem;">Habilitadas
-                    Automaticamente</h3>
-                <div class="flags-container">
-                    <img src="https://logospng.org/download/visa/logo-visa-2048.png" alt="Visa" loading="lazy"
-                        class="flag-img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard"
-                        loading="lazy" class="flag-img">
-                    <img src="https://logospng.org/download/cartao-elo/logo-cartao-elo-2048.png" alt="Elo"
-                        loading="lazy" class="flag-img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg"
-                        alt="American Express" loading="lazy" class="flag-img">
-                </div>
-            </div>
-            <div>
-                <a href="img/Folheto%20bandeiras.pdf" target="_blank" class="link-pdf">
-                    <svg class="w-6 h-6 mr-2" style="width: 1.5rem; margin-right: 0.5rem;" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                        </path>
-                    </svg>
-                    Ver lista completa de bandeiras aceitas (PDF)
+                
+                <a href="img/Folheto%20bandeiras.pdf" target="_blank" class="text-ton-green" style="text-decoration:underline">
+                    Ver lista completa de bandeiras (PDF)
                 </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 6. PROVA SOCIAL -->
-    <section class="section-proof">
-        <div class="container">
-            <h2 class="text-center font-bold mb-8" style="font-size: 1.5rem; margin-bottom: 2rem;">Garantia de Qualidade
-                Stone</h2>
-            <div class="proof-icons">
-                <div class="proof-item"><span class="text-ton-green">✔</span> Garantia Vitalícia</div>
-                <div class="proof-item"><span class="text-ton-green">✔</span> Suporte 24h</div>
-                <div class="proof-item"><span class="text-ton-green">✔</span> Sem Mensalidade</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. CTA FINAL -->
-    <section id="oferta" class="section-final">
-        <div class="container final-content">
-            <h2>Comece a lucrar mais hoje mesmo</h2>
-            <p>Aproveite o plano <strong>Ton Black</strong> com as menores taxas do mercado. Oferta exclusiva por tempo
-                limitado.</p>
-            <a href="https://ton.com.br/checkout/cart/?productId=TONBLACK_TIER_SMART_POS&referrer=D1B7AB60-6D0E-42A8-B876-7FA87148F094&userAnticipation=0&userTag=tonblack_tier&utm_medium=invite_share&utm_source=revendedor"
-                class="btn-final">
-                GARANTIR MEU DESCONTO AGORA
-            </a>
-            <div>
-                <a href="https://ton.com.br/catalogo/?referrer=D1B7AB60-6D0E-42A8-B876-7FA87148F094&userAnticipation=0&utm_medium=invite_share&utm_source=revendedor"
-                    class="link-catalog">
-                    Ver outros modelos no catálogo
+        <section style="background-color: var(--ton-dark); padding: 3rem 0; text-align: center; color: white;">
+            <div class="container">
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">Garanta sua Taxa Black</h2>
+                <a href="https://ton.com.br/checkout/cart/?productId=TONBLACK_TIER_SMART_POS&referrer=D1B7AB60-6D0E-42A8-B876-7FA87148F094&userAnticipation=0&userTag=tonblack_tier&utm_medium=invite_share&utm_source=revendedor" 
+                   class="btn-cta" style="display:inline-block; width:auto; padding: 1rem 3rem;">
+                   GARANTIR MEU DESCONTO AGORA
                 </a>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- 8. RODAPÉ -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <h4 class="text-white font-bold" style="margin-bottom: 1rem;">Sobre</h4>
-                    <p>Somos parceiros autorizados do programa Renda Ton. Nosso objetivo é oferecer as melhores soluções
-                        de pagamento para o seu negócio com total transparência.</p>
+                    <!-- FIX Hierarquia: H3 ou div estilizada -->
+                    <div class="footer-title">Sobre</div>
+                    <p>Somos parceiros autorizados do programa Renda Ton. Nosso objetivo é oferecer as melhores taxas para o seu negócio.</p>
                 </div>
                 <div class="footer-links">
-                    <h4 class="text-white font-bold" style="margin-bottom: 1rem;">Links Úteis</h4>
-                    <ul>
-                        <li><a href="https://documentos.ton.com.br/politica-de-privacidade.pdf">Política de
-                                Privacidade</a></li>
-                        <li><a href="https://documentos.ton.com.br/termos-e-condicoes.pdf">Termos e Condições</a></li>
-                        <li><a href="https://documentos.ton.com.br/regulamento-tonblack-tier.pdf">Regulamento Ton
-                                Black</a></li>
-                        <li><a href="https://ton.com.br" target="_blank">Site Oficial Ton</a></li>
-                    </ul>
+                    <div class="footer-title">Links Úteis</div>
+                    <a href="https://documentos.ton.com.br/politica-de-privacidade.pdf" target="_blank">Política de Privacidade</a>
+                    <a href="https://documentos.ton.com.br/termos-e-condicoes.pdf" target="_blank">Termos e Condições</a>
+                    <a href="https://ton.com.br" target="_blank">Site Oficial Ton</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p style="margin-bottom: 0.5rem;">⚠️ <strong>Aviso Importante:</strong> Este não é o site oficial da
-                    Ton/Stone. Somos um parceiro de vendas autorizado.</p>
-                <p>&copy;
-                    <script>document.write(new Date().getFullYear());</script> Oferta Tech Pagamentos. Todos os direitos
-                    reservados.
+            
+            <div style="border-top: 1px solid #374151; margin-top: 2rem; padding-top: 2rem; text-align: center;">
+                <p style="color: #fbbf24; font-weight: bold; margin-bottom: 0.5rem;">
+                    ⚠️ Aviso Importante:
                 </p>
+                <p>Este não é o site oficial da Ton/Stone. Somos um parceiro de vendas autorizado.</p>
+                <p style="margin-top: 1rem;">&copy; 2026 Oferta Tech Pagamentos. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
 </body>
-
 </html>
